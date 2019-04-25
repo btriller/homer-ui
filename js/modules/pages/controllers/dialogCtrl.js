@@ -223,7 +223,14 @@
                 $scope.enableRTPAgentReport = false;
                 $scope.enableQOSChart = false;
 
-                $scope.colorsChart = ['aqua', 'black', 'blue', 'fuchsia', 'gray', 'green', 'lime', 'maroon', 'navy', 'olive', 'orange', 'purple', 'red', 'silver', 'teal', 'white', 'yellow'];
+                $scope.colorsChart = [
+                    'aqua', 'black', 'blue', 'fuchsia',
+                    'gray', 'green', 'lime', 'maroon',
+                    'navy', 'olive', 'orange', 'purple',
+                    'red', 'silver', 'teal', 'aquamarine',
+                    'steelblue', 'mediumslateblue', 'midnightblue', 'burlywood',
+                    'indianred', 'darkred', 'darkkhaki', 'purple',
+                ];
 
 		/* convertor */
 		$scope.XRTP2value = function(prop){
@@ -658,7 +665,7 @@
         								$scope.streamsChart[key]["sub"][k]["enable"] = false;								
         								$scope.streamsChart[key]["sub"][k]["parent"] = key;								
         								$scope.streamsChart[key]["sub"][k]["name"] = k;								
-        								$scope.streamsChart[key]["sub"][k]["color"]= $scope.colorsChart[i++];
+									$scope.streamsChart[key]["sub"][k]["color"]= $scope.colorsChart[i++ % $scope.colorsChart.length];
 									if (k == 'mos') $scope.streamsChart[key]["sub"][k]["enable"] = true;
 								});								                                                                
 						    });
@@ -683,7 +690,7 @@
                         $scope.dataLoading = false;
                     });
                 };
-                
+
                 $scope.addRemoveStreamSerie = function(stream, subeb) {
                 
                     if(subeb == 1) 
