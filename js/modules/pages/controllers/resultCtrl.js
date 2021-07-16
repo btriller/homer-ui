@@ -297,6 +297,7 @@
 			search: {
 			    id: parseInt(localrow.entity.id), 
 			    callid: callids,
+			    limit: userProfile.getProfile("limit"),
 			    uniq: false
 			},
 			location: {
